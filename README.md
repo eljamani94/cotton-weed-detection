@@ -47,7 +47,7 @@ The Cotton Weed Detection System is an end-to-end MLOps application that uses YO
 - RESTful API for integration with other systems
 - Cloud-ready deployment architecture
 
-**Live Demo:** [View on Streamlit Cloud](https://your-app-name.streamlit.app)
+**Live Demo:** [View on Streamlit Cloud](https://fieldvision.streamlit.app/)
 
 ---
 
@@ -472,8 +472,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📧 Contact
 
 For questions, issues, or contributions:
-- Open an issue on [GitHub Issues](https://github.com/yourusername/cotton-weed-detection/issues)
-- Contact: [Your Email]
+- Open an issue on [GitHub Issues](https://github.com/eljamani94/cotton-weed-detection/issues)
+- Contact: [eljamani.aej@gmail.com]
 
 ---
 
