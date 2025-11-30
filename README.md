@@ -1,4 +1,4 @@
-# Cotton Weed Detection System
+# FieldVision (Cotton Weed Detection System)
 
 <div align="center">
 
@@ -38,7 +38,7 @@
 
 ## 🎯 Overview
 
-The Cotton Weed Detection System is an end-to-end MLOps application that uses YOLOv8 object detection to identify and classify weeds in cotton field images. The system provides a user-friendly web interface for farmers and agricultural researchers to upload field images and receive instant weed detection results with visual annotations.
+The FieldVision Cotton Weed Detection System is an end-to-end MLOps application that uses YOLOv8 object detection to identify and classify weeds in cotton field images. The system provides a user-friendly web interface for farmers and agricultural researchers to upload field images and receive instant weed detection results with visual annotations.
 
 **Key Capabilities:**
 - Real-time weed detection in cotton field images
@@ -47,7 +47,7 @@ The Cotton Weed Detection System is an end-to-end MLOps application that uses YO
 - RESTful API for integration with other systems
 - Cloud-ready deployment architecture
 
-**Live Demo:** [View on Streamlit Cloud](https://fieldvision.streamlit.app/)
+**Live Demo:** [View the FieldVision App](https://fieldvision.streamlit.app/)
 
 ---
 
