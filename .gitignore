@@ -34,6 +34,7 @@ wheels/
 # IDE
 .vscode/
 .idea/
+.claude/
 *.swp
 *.swo
 *~
@@ -60,6 +61,11 @@ uploads/
 *.jpg
 *.jpeg
 *.png
+# But allow images in app/assets and models folders
+!app/assets/*.jpg
+!app/assets/*.jpeg
+!app/assets/*.png
+!app/assets/*.webp
 !models/*.jpg
 !models/*.jpeg
 !models/*.png
@@ -74,4 +80,14 @@ uploads/
 # Streamlit (but keep config.toml)
 .streamlit/secrets.toml
 .streamlit/*.log
+
+# Documentation (exclude all markdown except README.md)
+*.md
+!README.md
+
+# Scripts and helper files
+scripts/
+*.bat
+*.sh
+!docker-compose*.yml
 
