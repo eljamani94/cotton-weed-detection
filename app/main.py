@@ -205,19 +205,54 @@ def draw_boxes(image, predictions):
     
     return image
 
-def predict_image(image_bytes):
-    """Send image to API and get predictions"""
+def predict_image(image_bytes, max_retries=3, initial_timeout=30):
+    """
+    Send image to API and get predictions with retry logic
+    
+    Args:
+        image_bytes: The image file bytes to send to the API
+        max_retries: Maximum number of retry attempts
+        initial_timeout: Initial timeout in seconds (will be increased with each retry)
+    """
+    import time
+    from requests.adapters import HTTPAdapter
+    from urllib3.util.retry import Retry
+    
+    # Configure retry strategy
+    retry_strategy = Retry(
+        total=max_retries,
+        backoff_factor=1,
+        status_forcelist=[408, 429, 500, 502, 503, 504],
+        allowed_methods=["POST"]
+    )
+    
+    # Create a session with retry
+    session = requests.Session()
+    session.mount("https://", HTTPAdapter(max_retries=retry_strategy))
+    
     try:
+        # Try with an initial timeout, will be increased on retries
         files = {"file": ("image.jpg", image_bytes, "image/jpeg")}
-        response = requests.post(f"{API_URL}/predict", files=files, timeout=30)
+        response = session.post(
+            f"{API_URL}/predict",
+            files=files,
+            timeout=(10, initial_timeout)  # (connect timeout, read timeout)
+        )
         
         if response.status_code == 200:
             return response.json()
         else:
-            st.error(f"API Error: {response.status_code}")
+            st.error(f"API Error {response.status_code}: {response.text}")
             return None
-    except Exception as e:
+            
+    except requests.exceptions.Timeout:
+        st.error("The request timed out. The server might be starting up. Please try again in a moment.")
+        return None
+    except requests.exceptions.RequestException as e:
         st.error(f"Error calling API: {str(e)}")
+        return None
+    finally:
+        session.close()
         return None
 
 def get_background_image_base64():
