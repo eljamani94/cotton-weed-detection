@@ -32,7 +32,6 @@
 - [Cloud Deployment](#-cloud-deployment)
 - [Configuration](#-configuration)
 - [Contributing](#-contributing)
-- [License](#-license)
 
 ---
 
@@ -46,8 +45,6 @@ The FieldVision Cotton Weed Detection System is an end-to-end MLOps application 
 - Visual bounding box annotations with confidence scores
 - RESTful API for integration with other systems
 - Cloud-ready deployment architecture
-
-**Live Demo:** [View the FieldVision App](https://fieldvision.streamlit.app/)
 
 ---
 
@@ -173,7 +170,7 @@ cotton_weed_project/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/cotton-weed-detection.git
+   git clone https://github.com/eljamani94/cotton-weed-detection.git
    cd cotton-weed-detection
    ```
 
@@ -355,8 +352,6 @@ docker run -p 8000:8000 -v $(pwd)/models:/app/models cotton-weed-api
 docker run -p 8501:8501 -e API_URL=http://host.docker.internal:8000 cotton-weed-app
 ```
 
----
-
 ## ☁️ Cloud Deployment
 
 ### Frontend Deployment (Streamlit Cloud)
@@ -409,8 +404,6 @@ docker run -p 8501:8501 -e API_URL=http://host.docker.internal:8000 cotton-weed-
        --format='get(networkInterfaces[0].accessConfigs[0].natIP)'
    ```
 
----
-
 ## ⚙️ Configuration
 
 ### Environment Variables
@@ -452,20 +445,6 @@ Contributions are welcome! Please follow these steps:
 - Add docstrings to functions and classes
 - Write tests for new features
 - Update documentation as needed
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- [Ultralytics](https://ultralytics.com/) for YOLOv8
-- [Streamlit](https://streamlit.io/) for the web framework
-- [FastAPI](https://fastapi.tiangolo.com/) for the API framework
 
 ---
 
